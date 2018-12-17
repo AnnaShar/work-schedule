@@ -1,0 +1,144 @@
+.wrapper {
+    font-family: "Comic Sans MS", "Lucida Sans Unicode", verdana;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    height: 100%;
+}
+.one-week-wrap {
+    display:grid;
+    grid-template-rows: 10% 40% 40%;
+    grid-template-columns: 2fr repeat(5, 15%) 1fr;
+    grid-gap: 3px;
+    width: 60%;
+    height: 30%;
+    padding: 3px;
+    background: #973de2;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.date-item {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.date-item__date {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    background: inherit;
+    color: rgba(255, 255, 255, 0.74);
+    font-family: "Comic Sans MS", "Lucida Sans Unicode", verdana;
+    border: none;
+}
+
+.date-item__datepicker {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    background: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+.time-item {
+    display: grid;
+    grid-template-areas:
+            "from hours"
+            "to hours";
+    grid-template-columns: 70% auto;
+    border-radius: 3px;
+}
+
+.time-item__from {
+    grid-area: from;
+    display: flex;
+    align-items: center;
+}
+
+
+.time-item__to {
+
+    grid-area: to;
+    display: flex;
+    align-items: center;
+}
+
+.time-item__hours {
+    grid-area: hours;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.one-week-wrap__text-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 3px;
+
+}
+.time-item__timepicker--from {
+    width: 100%;
+    background: inherit;
+    height: auto;
+    text-align: center;
+    font-family: "Comic Sans MS", "Lucida Sans Unicode", verdana;
+    font-weight: bold;
+    font-size: 95%;
+    border: none;
+    cursor: pointer;
+}
+.time-item__timepicker--to {
+    width: 100%;
+    background: inherit;
+    height: auto;
+    text-align: center;
+    font-family: "Comic Sans MS", "Lucida Sans Unicode", verdana;
+    font-weight: bold;
+    font-size: 95%;
+    border: none;
+    cursor: pointer;
+}
+
+.time-item__choice--intented {
+    height: auto;
+    border-radius: 3px;
+    border: 2px solid rgb(201, 163, 226);
+    margin:2px;
+    cursor: pointer;
+}
+.time-item__choice--actual {
+    height: auto;
+    border-radius: 3px;
+    border: 2px solid white;
+    margin:2px;
+    cursor: pointer;
+}
+
+.intended {
+    background: white;
+}
+
+.actual {
+    background: rgb(201, 163, 226);
+}
+
+.sum-hours{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+.sum-hours-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+

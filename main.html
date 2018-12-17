@@ -1,0 +1,147 @@
+
+<html>
+    <head>
+        <title>  Students' work schedule </title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+        <script type="text/javascript" src="date-time-picker.js"></script>
+
+        <script type="text/javascript" src="jquery.ui.timepicker.js"></script>
+        <link rel="stylesheet" type="text/css" src="jquery.ui.timepicker.css"/>
+
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <h1> Student's work hours</h1>
+            <div class="one-week-wrap">
+                <div><input type="button" value="Choose the week" class="date-item__datepicker"></div>
+                <div class="date-item">
+                    <div class="date-item__day"> monday </div>
+                    <div class="date-item__date" id="date0"></div>
+                </div>
+                <div class="date-item">
+                    <div class="date-item__day"> tuesday </div>
+                    <div class="date-item__date" id="date1"></div>
+                </div>
+                <div class="date-item"
+                ><div class="date-item__day"> wednesday</div>
+                    <div class="date-item__date" id="date2"></div>
+                </div>
+                <div class="date-item">
+                    <div class="date-item__day">thursday </div>
+                    <div class="date-item__date" id="date3"></div>
+                </div>
+                <div class="date-item">
+                    <div class="date-item__day"> friday</div>
+                    <div class="date-item__date" id="date4"></div>
+                </div>
+
+                <div class="sum-hours">Sum</div>
+
+                <div class="one-week-wrap__text-item intended">INTENDED WORK HOURS</div>
+                <div class="time-item intended">
+                    <div class="time-item__from time-item__choice--intented">
+                        <input type="text" class="time-item__timepicker--from" id="timepicker_i00">
+                    </div>
+                    <div class="time-item__to time-item__choice--intented">
+                        <input type="text" class="time-item__timepicker--to" id="timepicker_i01">
+                    </div>
+                    <div class="time-item__hours" id="hours_00">6</div>
+                </div>
+                <div class="time-item intended">
+                    <div class="time-item__from time-item__choice--intented">
+                        <input type="text" class="time-item__timepicker--from" id="timepicker_i10">
+                    </div>
+                    <div class="time-item__to time-item__choice--intented">
+                        <input type="text" class="time-item__timepicker--to" id="timepicker_i11">
+                    </div>
+                    <div class="time-item__hours" id="hours_01">9</div>
+                </div>
+                <div class="time-item intended">
+                    <div class="time-item__from time-item__choice--intented">
+                        <input type="text" class="time-item__timepicker--from" id="timepicker_i20">
+                    </div>
+                    <div class="time-item__to time-item__choice--intented">
+                        <input type="text" class="time-item__timepicker--to" id="timepicker_i21">
+                    </div>
+                    <div class="time-item__hours" id="hours_02">8</div>
+                </div>
+                <div class="time-item intended">
+                    <div class="time-item__from time-item__choice--intented">
+                        <input type="text" class="time-item__timepicker--from" id="timepicker_i30">
+                    </div>
+                    <div class="time-item__to time-item__choice--intented">
+                        <input type="text" class="time-item__timepicker--to" id="timepicker_i31">
+                    </div>
+                    <div class="time-item__hours" id="hours_03"></div>
+                </div>
+                <div class="time-item intended">
+                    <div class="time-item__from time-item__choice--intented">
+                        <input type="text" class="time-item__timepicker--from" id="timepicker_i40">
+                    </div>
+                    <div class="time-item__to time-item__choice--intented">
+                        <input type="text" class="time-item__timepicker--to" id="timepicker_i41">
+                    </div>
+                    <div class="time-item__hours" id="hours_04"></div>
+                </div>
+                <div class="sum-hours-value">0</div>
+
+                <div class="one-week-wrap__text-item actual">ACTUAL WORK HOURS</div>
+                <div class="time-item actual">
+                    <div class="time-item__from time-item__choice--actual">
+                        <input type="text" class="time-item__timepicker--from" id="timepicker_a00">
+                    </div>
+                    <div class="time-item__to time-item__choice--actual">
+                        <input type="text" class="time-item__timepicker--to" id="timepicker_a01">
+                    </div>
+                    <div class="time-item__hours" id="hours_10"></div>
+                </div>
+                <div class="time-item actual">
+                    <div class="time-item__from time-item__choice--actual">
+                        <input type="text" class="time-item__timepicker--from" id="timepicker_a10">
+                    </div>
+                    <div class="time-item__to time-item__choice--actual">
+                        <input type="text" class="time-item__timepicker--to" id="timepicker_a11">
+                    </div>
+                    <div class="time-item__hours" id="hours_11"></div>
+                </div>
+                <div class="time-item actual">
+                    <div class="time-item__from time-item__choice--actual">
+                        <input type="text" class="time-item__timepicker--from" id="timepicker_a20">
+                    </div>
+                    <div class="time-item__to time-item__choice--actual">
+                        <input type="text" class="time-item__timepicker--to" id="timepicker_a21">
+                    </div>
+                    <div class="time-item__hours" id="hours_12"></div>
+                </div>
+                <div class="time-item actual">
+                    <div class="time-item__from time-item__choice--actual">
+                        <input type="text" class="time-item__timepicker--from" id="timepicker_a30">
+                    </div>
+                    <div class="time-item__to time-item__choice--actual">
+                        <input type="text" class="time-item__timepicker--to" id="timepicker_a31">
+                    </div>
+                    <div class="time-item__hours" id="hours_13"></div>
+                </div>
+                <div class="time-item actual">
+                    <div class="time-item__from time-item__choice--actual">
+                        <input type="text" class="time-item__timepicker--from" id="timepicker_a40">
+                    </div>
+                    <div class="time-item__to time-item__choice--actual">
+                        <input type="text" class="time-item__timepicker--to" id="timepicker_a41">
+                    </div>
+                    <div class="time-item__hours" id="hours_14"></div>
+                </div>
+                <div class="sum-hours-value">0</div>
+
+            </div>
+        </div>
+    </body>
+</html>

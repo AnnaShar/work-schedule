@@ -2,18 +2,25 @@
 <html>
     <head>
         <title>  Students' work schedule </title>
+
+
         <link rel="stylesheet" type="text/css" href="main.css">
+        <!--<script type="text/javascript" src="./jquery-3.3.1.js"></script>-->
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
-
-        <script type="text/javascript" src="date-time-picker.js"></script>
-
         <script type="text/javascript" src="jquery.ui.timepicker.js"></script>
         <link rel="stylesheet" type="text/css" src="jquery.ui.timepicker.css"/>
+
+
+        <link rel="stylesheet" type="text/css" href="src/mdtimepicker.css">
+        <script type="text/javascript" src="src/mdtimepicker.js"></script>
+
+        <script type="text/javascript" src="date-time-picker-1.js"></script>
+
+
 
     </head>
 
@@ -53,7 +60,7 @@
                     <div class="time-item__to time-item__choice--intented">
                         <input type="text" class="time-item__timepicker--to" id="timepicker_i01">
                     </div>
-                    <div class="time-item__hours" id="hours_00">6</div>
+                    <div class="time-item__hours" id="hours_i0">6</div>
                 </div>
                 <div class="time-item intended">
                     <div class="time-item__from time-item__choice--intented">
@@ -62,7 +69,7 @@
                     <div class="time-item__to time-item__choice--intented">
                         <input type="text" class="time-item__timepicker--to" id="timepicker_i11">
                     </div>
-                    <div class="time-item__hours" id="hours_01">9</div>
+                    <div class="time-item__hours" id="hours_i1">9</div>
                 </div>
                 <div class="time-item intended">
                     <div class="time-item__from time-item__choice--intented">
@@ -71,7 +78,7 @@
                     <div class="time-item__to time-item__choice--intented">
                         <input type="text" class="time-item__timepicker--to" id="timepicker_i21">
                     </div>
-                    <div class="time-item__hours" id="hours_02">8</div>
+                    <div class="time-item__hours" id="hours_i2">8</div>
                 </div>
                 <div class="time-item intended">
                     <div class="time-item__from time-item__choice--intented">
@@ -80,7 +87,7 @@
                     <div class="time-item__to time-item__choice--intented">
                         <input type="text" class="time-item__timepicker--to" id="timepicker_i31">
                     </div>
-                    <div class="time-item__hours" id="hours_03"></div>
+                    <div class="time-item__hours" id="hours_i3"></div>
                 </div>
                 <div class="time-item intended">
                     <div class="time-item__from time-item__choice--intented">
@@ -89,7 +96,7 @@
                     <div class="time-item__to time-item__choice--intented">
                         <input type="text" class="time-item__timepicker--to" id="timepicker_i41">
                     </div>
-                    <div class="time-item__hours" id="hours_04"></div>
+                    <div class="time-item__hours" id="hours_i4"></div>
                 </div>
                 <div class="sum-hours-value">0</div>
 
@@ -101,7 +108,7 @@
                     <div class="time-item__to time-item__choice--actual">
                         <input type="text" class="time-item__timepicker--to" id="timepicker_a01">
                     </div>
-                    <div class="time-item__hours" id="hours_10"></div>
+                    <div class="time-item__hours" id="hours_a0"></div>
                 </div>
                 <div class="time-item actual">
                     <div class="time-item__from time-item__choice--actual">
@@ -110,7 +117,7 @@
                     <div class="time-item__to time-item__choice--actual">
                         <input type="text" class="time-item__timepicker--to" id="timepicker_a11">
                     </div>
-                    <div class="time-item__hours" id="hours_11"></div>
+                    <div class="time-item__hours" id="hours_a1"></div>
                 </div>
                 <div class="time-item actual">
                     <div class="time-item__from time-item__choice--actual">
@@ -119,7 +126,7 @@
                     <div class="time-item__to time-item__choice--actual">
                         <input type="text" class="time-item__timepicker--to" id="timepicker_a21">
                     </div>
-                    <div class="time-item__hours" id="hours_12"></div>
+                    <div class="time-item__hours" id="hours_a2"></div>
                 </div>
                 <div class="time-item actual">
                     <div class="time-item__from time-item__choice--actual">
@@ -128,7 +135,7 @@
                     <div class="time-item__to time-item__choice--actual">
                         <input type="text" class="time-item__timepicker--to" id="timepicker_a31">
                     </div>
-                    <div class="time-item__hours" id="hours_13"></div>
+                    <div class="time-item__hours" id="hours_a3"></div>
                 </div>
                 <div class="time-item actual">
                     <div class="time-item__from time-item__choice--actual">
@@ -137,7 +144,7 @@
                     <div class="time-item__to time-item__choice--actual">
                         <input type="text" class="time-item__timepicker--to" id="timepicker_a41">
                     </div>
-                    <div class="time-item__hours" id="hours_14"></div>
+                    <div class="time-item__hours" id="hours_a4"></div>
                 </div>
                 <div class="sum-hours-value">0</div>
 

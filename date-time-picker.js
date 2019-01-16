@@ -4,25 +4,27 @@ $(function () {
     $(".date-item__datepicker").datepicker({
         buttonText: "Pick a date",
         firstDay: 1,
-        onSelect: function (date) {
-            var d = new Date(date);
-            var index = d.getDay();
-            if (index == 0) {
-                d.setDate(d.getDate() - 6);
-            }
-            else if (index == 1) {
-                d.setDate(d.getDate());
-            }
-            else if (index != 1 && index > 0) {
-                d.setDate(d.getDate() - (index - 1));
-            }
-            mondayOfWeek = d;
-            fillDates(mondayOfWeek);
-            activateTimepicker();
-        }
-
+        onSelect: setWeek()
+        })
     });
-});
+
+
+function setWeek(date){
+    var monday = new Date(date);
+    var day = monday.getDay();
+    if (day === 0) {
+        monday.setDate(monday.getDate() - 6);
+    }
+    else if (day === 1) {
+        monday.setDate(monday.getDate());
+    }
+    else if (day !== 1 && day > 0) {
+        monday.setDate(monday.getDate() - (day - 1));
+    }
+    mondayOfWeek = monday;
+    fillDates(mondayOfWeek);
+    activateTimepicker();
+}
 
 function activateTimepicker() {
 

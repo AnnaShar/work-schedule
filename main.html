@@ -28,7 +28,7 @@
         <div class="wrapper">
             <h1> Student's work hours</h1>
             <div class="one-week-wrap">
-                <div><input type="button" value="Choose the week" class="date-item__datepicker"></div>
+                <div class="choose-week"><input type="button" value="Choose the week" class="date-item__datepicker"></div>
                 <div class="date-item">
                     <div class="date-item__day"> monday </div>
                     <div class="date-item__date" id="date0"></div>
@@ -55,98 +55,98 @@
                 <div class="one-week-wrap__text-item intended">INTENDED WORK HOURS</div>
                 <div class="time-item intended">
                     <div class="time-item__from time-item__choice--intented">
-                        <input type="text" class="time-item__timepicker--from" id="timepicker_i00">
+                        <input type="text" class="time-item__timepicker--from div-mdtimepicker" id="timepicker_i00">
                     </div>
                     <div class="time-item__to time-item__choice--intented">
-                        <input type="text" class="time-item__timepicker--to" id="timepicker_i01">
+                        <input type="text" class="time-item__timepicker--to div-mdtimepicker" id="timepicker_i01">
                     </div>
                     <div class="time-item__hours" id="hours_i0">6</div>
                 </div>
                 <div class="time-item intended">
                     <div class="time-item__from time-item__choice--intented">
-                        <input type="text" class="time-item__timepicker--from" id="timepicker_i10">
+                        <input type="text" class="time-item__timepicker--from div-mdtimepicker" id="timepicker_i10">
                     </div>
                     <div class="time-item__to time-item__choice--intented">
-                        <input type="text" class="time-item__timepicker--to" id="timepicker_i11">
+                        <input type="text" class="time-item__timepicker--to div-mdtimepicker"  id="timepicker_i11">
                     </div>
                     <div class="time-item__hours" id="hours_i1">9</div>
                 </div>
                 <div class="time-item intended">
                     <div class="time-item__from time-item__choice--intented">
-                        <input type="text" class="time-item__timepicker--from" id="timepicker_i20">
+                        <input type="text" class="time-item__timepicker--from div-mdtimepicker"  id="timepicker_i20">
                     </div>
                     <div class="time-item__to time-item__choice--intented">
-                        <input type="text" class="time-item__timepicker--to" id="timepicker_i21">
+                        <input type="text" class="time-item__timepicker--to div-mdtimepicker"  id="timepicker_i21">
                     </div>
                     <div class="time-item__hours" id="hours_i2">8</div>
                 </div>
                 <div class="time-item intended">
                     <div class="time-item__from time-item__choice--intented">
-                        <input type="text" class="time-item__timepicker--from" id="timepicker_i30">
+                        <input type="text" class="time-item__timepicker--from div-mdtimepicker"  id="timepicker_i30">
                     </div>
                     <div class="time-item__to time-item__choice--intented">
-                        <input type="text" class="time-item__timepicker--to" id="timepicker_i31">
+                        <input type="text" class="time-item__timepicker--to div-mdtimepicker"  id="timepicker_i31">
                     </div>
                     <div class="time-item__hours" id="hours_i3"></div>
                 </div>
                 <div class="time-item intended">
                     <div class="time-item__from time-item__choice--intented">
-                        <input type="text" class="time-item__timepicker--from" id="timepicker_i40">
+                        <input type="text" class="time-item__timepicker--from div-mdtimepicker"  id="timepicker_i40">
                     </div>
                     <div class="time-item__to time-item__choice--intented">
-                        <input type="text" class="time-item__timepicker--to" id="timepicker_i41">
+                        <input type="text" class="time-item__timepicker--to div-mdtimepicker"   id="timepicker_i41">
                     </div>
                     <div class="time-item__hours" id="hours_i4"></div>
                 </div>
-                <div class="sum-hours-value">0</div>
+                <div class="sum-hours-value" id="sum-hours-intended">0</div>
 
                 <div class="one-week-wrap__text-item actual">ACTUAL WORK HOURS</div>
                 <div class="time-item actual">
                     <div class="time-item__from time-item__choice--actual">
-                        <input type="text" class="time-item__timepicker--from" id="timepicker_a00">
+                        <input type="text" class="time-item__timepicker--from div-mdtimepicker"  id="timepicker_a00">
                     </div>
                     <div class="time-item__to time-item__choice--actual">
-                        <input type="text" class="time-item__timepicker--to" id="timepicker_a01">
+                        <input type="text" class="time-item__timepicker--to div-mdtimepicker"  id="timepicker_a01">
                     </div>
                     <div class="time-item__hours" id="hours_a0"></div>
                 </div>
                 <div class="time-item actual">
                     <div class="time-item__from time-item__choice--actual">
-                        <input type="text" class="time-item__timepicker--from" id="timepicker_a10">
+                        <input type="text" class="time-item__timepicker--from div-mdtimepicker"  id="timepicker_a10">
                     </div>
                     <div class="time-item__to time-item__choice--actual">
-                        <input type="text" class="time-item__timepicker--to" id="timepicker_a11">
+                        <input type="text" class="time-item__timepicker--to div-mdtimepicker"  id="timepicker_a11">
                     </div>
                     <div class="time-item__hours" id="hours_a1"></div>
                 </div>
                 <div class="time-item actual">
                     <div class="time-item__from time-item__choice--actual">
-                        <input type="text" class="time-item__timepicker--from" id="timepicker_a20">
+                        <input type="text" class="time-item__timepicker--from div-mdtimepicker"  id="timepicker_a20">
                     </div>
                     <div class="time-item__to time-item__choice--actual">
-                        <input type="text" class="time-item__timepicker--to" id="timepicker_a21">
+                        <input type="text" class="time-item__timepicker--to div-mdtimepicker"  id="timepicker_a21">
                     </div>
                     <div class="time-item__hours" id="hours_a2"></div>
                 </div>
                 <div class="time-item actual">
                     <div class="time-item__from time-item__choice--actual">
-                        <input type="text" class="time-item__timepicker--from" id="timepicker_a30">
+                        <input type="text" class="time-item__timepicker--from div-mdtimepicker"  id="timepicker_a30">
                     </div>
                     <div class="time-item__to time-item__choice--actual">
-                        <input type="text" class="time-item__timepicker--to" id="timepicker_a31">
+                        <input type="text" class="time-item__timepicker--to div-mdtimepicker"  id="timepicker_a31">
                     </div>
                     <div class="time-item__hours" id="hours_a3"></div>
                 </div>
                 <div class="time-item actual">
                     <div class="time-item__from time-item__choice--actual">
-                        <input type="text" class="time-item__timepicker--from" id="timepicker_a40">
+                        <input type="text" class="time-item__timepicker--from div-mdtimepicker"  id="timepicker_a40">
                     </div>
                     <div class="time-item__to time-item__choice--actual">
-                        <input type="text" class="time-item__timepicker--to" id="timepicker_a41">
+                        <input type="text" class="time-item__timepicker--to div-mdtimepicker"  id="timepicker_a41">
                     </div>
                     <div class="time-item__hours" id="hours_a4"></div>
                 </div>
-                <div class="sum-hours-value">0</div>
+                <div class="sum-hours-value" id="sum-hours-actual">0</div>
 
             </div>
         </div>

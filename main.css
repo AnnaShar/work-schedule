@@ -40,6 +40,8 @@
     background: inherit;
     cursor: pointer;
     border: none;
+    color: white;
+    font-family: "Comic Sans MS", "Lucida Sans Unicode", verdana;
 }
 
 .time-item {
@@ -142,3 +144,12 @@
     color: white;
 }
 
+input {
+    outline: none;
+}
+
+.choose-week{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

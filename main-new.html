@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>  Students' work schedule </title>
+
+    <script src="src/jquery-3.3.1.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="main-new.css">
+
+    <script src="src/jquery-ui.js"></script>
+    <link rel="stylesheet" href="src/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="src/mdtimepicker.css">
+    <script type="text/javascript" src="src/mdtimepicker.js"></script>
+
+    <script type="text/javascript" src="date-time-picker-1.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1> Student's work hours</h1>
+
+        <div class="one-week-wrap">
+            <div class="table-header-column">
+                <div class="choose-week" id="choose-week-tooltip" data-description="Pick any day to choose week" data-toggle="tooltip">
+                    <input type="button" value="Choose week" class="datepicker" id="choose-week-btn">
+                </div>
+
+                <div class="header-fields">
+                    <div class="time-header intended">INTENDED WORK HOURS</div>
+                    <div class="time-header actual">ACTUAL WORK HOURS</div>
+                </div>
+            </div>
+
+                <!--Monday-->
+                <div class="day-wrapper">
+                    <div class="date-wrapper">
+                        <div class="weekday"> mon </div>
+                        <div class="date" id="date1"></div>
+                    </div>
+
+                    <div class="time-wrapper intended">
+                            <div class="time-description"> intended </div>
+                            <div class="time__from intended">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_i00">
+                            </div>
+                            <div class="time__to">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_i01">
+                            </div>
+                            <div class="number-of-hours" id="hours_i0">0</div>
+                    </div>
+
+                    <div class="time-wrapper actual">
+                            <div class="time-description"> actual </div>
+                            <div class="time__from">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_a00">
+                            </div>
+                            <div class="time__to">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_a01">
+                            </div>
+                            <div class="number-of-hours" id="hours_a0">0</div>
+                    </div>
+                </div>
+
+                <!--Tuesday-->
+                <div class="day-wrapper">
+                    <div class="date-wrapper">
+                        <div class="weekday"> tue </div>
+                        <div class="date" id="date2"></div>
+                    </div>
+
+                    <div class="time-wrapper intended">
+                            <div class="time-description"> intended </div>
+                            <div class="time__from">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_i10">
+                            </div>
+                            <div class="time__to">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_i11">
+                            </div>
+                            <div class="number-of-hours" id="hours_i1">0</div>
+                    </div>
+
+                    <div class="time-wrapper actual">
+                            <div class="time-description"> actual </div>
+                            <div class="time__from">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_a10">
+                            </div>
+                            <div class="time__to">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_a11">
+                            </div>
+                            <div class="number-of-hours" id="hours_a1">0</div>
+                    </div>
+                </div>
+
+                <!--Wednesday-->
+                <div class="day-wrapper">
+                    <div class="date-wrapper">
+                        <div class="weekday"> wed </div>
+                        <div class="date" id="date3"></div>
+                    </div>
+
+                    <div class="time-wrapper intended">
+                            <div class="time-description"> intended </div>
+                            <div class="time__from">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_i30">
+                            </div>
+                            <div class="time__to">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_i31">
+                            </div>
+                            <div class="number-of-hours" id="hours_i3">0</div>
+                    </div>
+
+                    <div class="time-wrapper actual">
+                            <div class="time-description"> actual </div>
+                            <div class="time__from">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_a30">
+                            </div>
+                            <div class="time__to">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_a31">
+                            </div>
+                            <div class="number-of-hours" id="hours_a3">0</div>
+                    </div>
+                </div>
+
+                <!--Thursday-->
+                <div class="day-wrapper">
+                    <div class="date-wrapper">
+                        <div class="weekday"> thu </div>
+                        <div class="date" id="date4"></div>
+                    </div>
+
+                    <div class="time-wrapper intended">
+                            <div class="time-description"> intended </div>
+                            <div class="time__from">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_i40">
+                            </div>
+                            <div class="time__to">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_i41">
+                            </div>
+                            <div class="number-of-hours" id="hours_i4">0</div>
+                    </div>
+
+                    <div class="time-wrapper actual">
+                            <div class="time-description"> actual </div>
+                            <div class="time__from">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_a40">
+                            </div>
+                            <div class="time__to">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_a41">
+                            </div>
+                            <div class="number-of-hours" id="hours_a4">0</div>
+                    </div>
+                </div>
+
+                <!--Friday-->
+                <div class="day-wrapper">
+                    <div class="date-wrapper">
+                        <div class="weekday"> fri </div>
+                        <div class="date" id="date5"></div>
+                    </div>
+
+                    <div class="time-wrapper intended">
+                            <div class="time-description"> intended </div>
+                            <div class="time__from">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_i50">
+                            </div>
+                            <div class="time__to">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_i51">
+                            </div>
+                            <div class="number-of-hours" id="hours_i5">0</div>
+                    </div>
+
+                    <div class="time-wrapper actual">
+                            <div class="time-description"> actual </div>
+                            <div class="time__from">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_a50">
+                            </div>
+                            <div class="time__to">
+                                <input type="text" class="time-picker-input timepicker" id="timepicker_a51">
+                            </div>
+                            <div class="number-of-hours" id="hours_a5">0</div>
+                    </div>
+                </div>
+
+                <!--Sum of hours-->
+                <div class="sum-wrapper">
+                    <div class="sum-header"> Sum </div>
+                    <div class="sum-hours-value" id="sum-hours-intended">0</div>
+                    <div class="sum-hours-value" id="sum-hours-actual">0</div>
+                </div>
+
+        </div>
+    </div>
+</body>
+</html>

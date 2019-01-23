@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    document.getElementsByClassName("choose-week")[0].classList.add("choose-week--highlited");
-    setTimeout(function(){document.getElementsByClassName("choose-week")[0].classList.remove("choose-week--highlited");},  3000);
+    // document.getElementsByClassName("choose-week")[0].classList.add("choose-week--highlited");
+    // setTimeout(function(){document.getElementsByClassName("choose-week")[0].classList.remove("choose-week--highlited");},  3000);
 
     //$('[data-toggle="tooltip"]').tooltip().mouseover();
     //setTimeout(function(){ $("#choose-week-tooltip").tooltip('hide'); }, 3000);
@@ -11,7 +11,7 @@ var mondayOfWeek;
 var currentWeek = [];
 
 $(function () {
-    $(".date-item__datepicker").datepicker({
+    $(".datepicker").datepicker({
         buttonText: "Pick a date",
         firstDay: 1,
         onSelect: function(date) {
@@ -24,7 +24,7 @@ $(function () {
 function activateTimepicker() {
 
 
- $(".div-mdtimepicker").mdtimepicker({
+ $(".timepicker").mdtimepicker({
          readOnly: true,
          format: 'hh:mm',
          hourPadding: false,

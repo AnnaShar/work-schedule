@@ -1,3 +1,12 @@
+$(document).ready(function() {
+    document.getElementsByClassName("choose-week")[0].classList.add("choose-week--highlited");
+    setTimeout(function(){document.getElementsByClassName("choose-week")[0].classList.remove("choose-week--highlited");},  3000);
+
+    //$('[data-toggle="tooltip"]').tooltip().mouseover();
+    //setTimeout(function(){ $("#choose-week-tooltip").tooltip('hide'); }, 3000);
+});
+
+
 var mondayOfWeek;
 var currentWeek = [];
 
@@ -7,50 +16,23 @@ $(function () {
         firstDay: 1,
         onSelect: function(date) {
             setWeek(date);
+            $("#choose-week-btn").val("Choose week");
         }
     });
 });
 
 function activateTimepicker() {
 
-    // $(".div-mdtimepicker").mdtimepicker({
-    //     readOnly: true,
-    //     format: 'hh:mm',
-    //     hourPadding: false,
-    //     theme:'purple'
-    // }).on('timechanged', function(e){
-    //     updateTimeArray(this.id, e.value);
-    // });
 
-    $(".time-item__timepicker--from").mdtimepicker({
-        readOnly: true,
-        format: 'hh:mm',
-        hourPadding: false,
-        theme:'purple'
-    }).on('timechanged', function(e){
-        var fromTime1 = e.value;
-        var toTime = $("#"+getPairID(this.id))[0].defaultValue;
-        if (!isTimeValid(fromTime1, toTime)){
-            $("#"+this.id).val("");
-            //$("#"+this.id).attr("data-time", "");
-            alert("Time FROM must be less the time TO");
+ $(".div-mdtimepicker").mdtimepicker({
+         readOnly: true,
+         format: 'hh:mm',
+         hourPadding: false,
+         theme:'purple'
+     }).on('timechanged', function(e){
+         updateTimeArray(this.id, e.value);
+     });
 
-        }
-    });
-
-    $(".time-item__timepicker--to").mdtimepicker({
-        readOnly: true,
-        format: 'hh:mm',
-        hourPadding: false
-    }).on('timechanged', function(e){
-        var fromTime = $("#"+getPairID(this.id))[0].defaultValue;
-        var toTime = e.value;
-        if (!isTimeValid(fromTime, toTime)){
-            $("#"+this.id).val("");
-            //$("#"+this.id).attr("data-time", "");
-            alert("Time FROM must be less the time TO");
-        }
-    });
 }
 
 function setWeek(date){
@@ -98,19 +80,22 @@ function updateTimeArray (id, time){
         fromTime = time;
         var pairID=getPairID(id);
         toTime = currentWeek[indexDay][pairID];
-        if (isTimeValid(fromTime,toTime)){
-            currentWeek[indexDay][id]=time;
-            updateHours(indexDay, id, getPairID(id));
-        }
     }
     else{
         toTime = time;
         var pairID=getPairID(id);
         fromTime = currentWeek[indexDay][pairID];
-        if (isTimeValid(fromTime,toTime)){
-            currentWeek[indexDay][id]=time;
-            updateHours(indexDay,getPairID(id), id);
-        }
+    }
+
+    if (isTimeValid(fromTime,toTime)){
+        currentWeek[indexDay][id]=time;
+        if (isTimeFrom)
+        updateHours(indexDay, id, getPairID(id));
+        else updateHours(indexDay, getPairID(id), id);
+    }
+    else {
+        $("#"+id).val("");
+        alert("Time FROM must be less the time TO");
     }
 }
 function updateHours(day, idFrom, idTo){
@@ -118,7 +103,7 @@ function updateHours(day, idFrom, idTo){
     var toTime = currentWeek[day][idTo];
     if (fromTime!==undefined && toTime!==undefined){
         var hours = subTimes(fromTime, toTime);
-        $("#"+getHoursSumID(idFrom)).innerText.change(hours);
+        $("#"+getHoursSumID(idFrom)).text(hours);
         updateSumHours();
     }
 }
@@ -127,18 +112,18 @@ function updateSumHours(){
     var sumIntended=0, sumActual=0;
     for(var i=0; i<5;i++){
         var id = "hours_i"+i;
-        if ($("#"+id).innerText!==""){
-            sumIntended+=parseInt( $("#"+id).innerText);
+        if ($("#"+id).text()!==""){
+            sumIntended+=parseFloat( $("#"+id).text());
         }
     }
     for(var i=0; i<5;i++){
         var id = "hours_a"+i;
-        if ($("#"+id).innerText!==""){
-            sumActual+=parseInt( $("#"+id).innerText);
+        if ($("#"+id).text()!==""){
+            sumActual+=parseFloat( $("#"+id).text());
         }
     }
-    $("#sum-hours-intended").innerText=sumIntended;
-    $("#sum-hours-actual").innerText=sumActual;
+    $("#sum-hours-intended").text(sumIntended);
+    $("#sum-hours-actual").text(sumActual);
 }
 
 function getHoursSumID(fromID){
@@ -171,9 +156,21 @@ function subTimes(from, to){
     }
     else resultHours=toHours-fromHours;
 
-    return resultHours+(resultMinutes/60);
+    return resultHours+roundMinutes((resultMinutes/60).toFixed(2));
 }
 
+function roundMinutes(partOfHour){
+    var minutes = partOfHour*100;
+    var currentDifference = minutes;
+    var closerNumber = 0;
+    for (var i=25; i<=100; i+=25){
+        if (Math.abs(minutes-i)<currentDifference){
+            currentDifference = minutes-i;
+            closerNumber = i;
+        }
+        else return closerNumber/100;
+    }
+}
 
 function getPairID(id) {
     var pairID = "timepicker_";

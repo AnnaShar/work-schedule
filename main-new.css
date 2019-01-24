@@ -4,10 +4,17 @@ html, body {
 
     font-size: 16px;
     font-family: "Comic Sans MS", "Lucida Sans Unicode", sans-serif;
+    margin:0;
+    padding:0;
 }
 
 input {
     outline: none;
+    display:block;
+    box-sizing: border-box;
+
+    height: 100%;
+    width: 100%;
 
     font-size: 16px;
     font-family: "Comic Sans MS", "Lucida Sans Unicode", sans-serif;
@@ -20,14 +27,6 @@ input {
     flex-direction:column;
 
     height: 100%;
-}
-
-.one-week-wrap {
-    display: flex;
-
-    border: 1px solid black;
-    border-radius: 5px;
-    background: #973de2;
 }
 
 .intended {
@@ -43,13 +42,16 @@ input {
 }
 .weekday {
     position: absolute;
-    left: 0;
+    left: 10px;
 
     color: white;
 }
 .date {
+    height: 100%;
+    width: 60%;
+    border: none;
     position: absolute;
-    right: 0;
+    right: 10px;
 
     text-align: center;
     background: inherit;
@@ -67,32 +69,34 @@ input {
     color: white;
     font-size: 16px;
 }
-
-.time-wrapper {
+.sum-wrapper{
+    color:white;
+    text-align: center;
+}
+.time {
     display: grid;
     grid-template-areas:
             "from hours"
             "to hours";
     grid-template-columns: 70% auto;
 
-    height: 45%;
+    height: 50%;
+    margin:2px;
     border-radius: 3px;
 }
 
-.time-header {
-    height: 45%;
-}
-.actual-time {
-    background: rgb(201, 163, 226);
-}
-.time__from {
-
-}
-.time__from .intended {
+.time-intended {
     height: auto;
     margin:2px;
     border-radius: 3px;
     border: 2px solid rgb(201, 163, 226);
+    cursor: pointer;
+}
+.time-actual {
+    height: auto;
+    margin:2px;
+    border-radius: 3px;
+    border: 2px solid white;
     cursor: pointer;
 }
 /*desktop*/
@@ -100,11 +104,11 @@ input {
     .one-week-wrap{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: stretch;
 
         width: 60%;
         height: 30%;
-        //padding: 3px;
+        padding: 2px;
 
         border: 1px solid black;
         border-radius: 5px;
@@ -116,26 +120,56 @@ input {
     .sum-wrapper {
         display: flex;
         flex-direction: column;
+
+        box-sizing: border-box;
         height: 100%;
-        margin:2px;
     }
+
     .table-header-column,
     .day-wrapper{
-        width: 13%;
+        width: 15%;
     }
+
     .sum-wrapper {
-        width: 9%;
+        width: 10%;
     }
-    .sum-header{
+
+    .sum-header,
+    .date-wrapper,
+    .choose-week{
+        box-sizing: border-box;
         height:10%;
+        width:100%;
+        margin: 2px;
+    }
+
+    .time-wrapper,
+    .header-fields,
+    .sum-values{
+        display:flex;
+        flex-direction: column;
+        justify-content: stretch;
+        box-sizing: border-box;
+        height: 84%;
+    }
+
+    .time-header,
+    .sum-hours-value{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        margin:2px;
+        padding:10px;
+        border-radius: 3px;
     }
     .choose-week{
         position:relative;
         display: flex;
         justify-content: center;
         align-items: center;
+        box-sizing: border-box;
 
-        height: 10%;
         text-align: center;
         background: #973de2;
 
@@ -195,24 +229,13 @@ input {
         display:block;
         opacity:1;
         z-index: -1;
-        /*box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.8);*/
 
         height:60px;
         width: 200px;
     }
     #choose-week-tooltip:hover{
         z-index:1;
-        border:3px solid white;
-        border-radius: 3px;
-    }
-
-    .header-fields {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 90%;
-        //padding: 10px;
+        border: 2px solid white;
         border-radius: 3px;
     }
 
@@ -248,7 +271,6 @@ input {
         background: inherit;
         font-weight: bold;
         font-family: inherit;
-        //font-size: 95%;
     }
 
 }

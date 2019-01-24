@@ -57,7 +57,7 @@ function initializeCurrentWeek(dayOfWeek){
 }
 
 function fillDates(monday) {
-    for (var i = 0; i < 5; i++) {
+    for (var i = 1; i <= 5; i++) {
         var dateItem = document.getElementById("date" + i);
         var date = new Date(monday);
         date = date.addDays(i);

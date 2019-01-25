@@ -1,0 +1,84 @@
+/*mobile portrait*/
+@media (max-width: 767px) and (orientation: portrait) {
+    .wrapper {
+        background: #a061e2;
+        font-size:14px;
+    }
+    h1 {
+        color:white;
+    }
+    .one-week-wrap{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        height: 90%;
+        width: 100%;
+    }
+
+    .time-header {
+        display:none;
+    }
+
+    .day-wrapper,
+    .sum-wrapper {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        //height: calc(100%/7);
+        width:100%;
+        margin:2px;
+    }
+    .table-header-column{
+        position:fixed;
+        top:0;
+        height: fit-content;
+    }
+
+    .sum-header,
+    .date-wrapper,
+    .choose-week{
+        box-sizing: border-box;
+        height:15%;
+        width:100%;
+        margin: 2px;
+    }
+
+    .time-wrapper,
+    .sum-values{
+        display:flex;
+        flex-direction: row;
+        justify-content: stretch;
+        box-sizing: border-box;
+        height: 85%;
+    }
+    .header-fields{
+        display:none;
+    }
+    .time {
+        display: grid;
+        grid-template-areas:
+                "description description"
+                "from hours"
+                "to hours";
+        grid-template-columns: 70% auto;
+
+        height: 100%;
+        width:50%;
+        margin:2px;
+        border-radius: 3px;
+    }
+    .time-description {
+        grid-area: description;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/*mobile*/
+@media (max-width: 767px) and (orientation: landscape) {
+    .one-week-wrap{
+
+    }
+}
